@@ -9,6 +9,7 @@ import Link from "next/link"
 export function HeroSection() {
   return (
     <motion.section
+      id="home"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -26,7 +27,7 @@ export function HeroSection() {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6"
           >
             Hi✨, I'm Himani
           </motion.h1>

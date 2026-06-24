@@ -10,6 +10,8 @@ import { ShortsSection } from "@/components/sections/shorts"
 import { EducationSection } from "@/components/sections/education"
 import { WorkExSection } from "@/components/sections/workex"
 import { ProjectSection } from "@/components/sections/project"
+import { ContentCreationSection } from "@/components/sections/content-creation"
+import { OtherInterestsSection } from "@/components/sections/other-interests"
 
 
 
@@ -26,6 +28,8 @@ export default function Home() {
       <ProjectSection/>
       <CertificateSection/>
       <EducationSection/>
+      <ContentCreationSection/>
+      <OtherInterestsSection/>
       <ContactSection/>
     </div>
   )

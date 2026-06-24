@@ -3,16 +3,17 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/navbar';
-import { Footer } from '@/components/footer';
+import { AnimatedBackground } from '@/components/animated-background';
 import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Folio Motion - Interactive Developer Portfolio',
-  description: 'Folio Motion is a dynamic and visually engaging developer portfolio designed to showcase the skills, projects, and experiences of a modern developer. With a focus on cutting-edge web technologies such as Next.js, React, and Tailwind CSS, this portfolio highlights a deep understanding of both front-end and back-end development. It incorporates interactive animations, smooth transitions, and responsive design, offering visitors an immersive experience. Explore a collection of projects demonstrating expertise in UI/UX design, full-stack development, and more, alongside professional roles, certifications, and contributions to open-source communities.',
+  title: 'Himani Gulati | Data Scientist & Content Creator',
+  description:
+    "Himani Gulati's portfolio. Data scientist, researcher and content creator. Blogs, tutorials and projects across machine learning, AI, NLP and computer vision.",
   icons: {
-    icon: 'https://tinyurl.com/2xhrkaao', // Link to your favicon
+    icon: '/favicon.svg',
   },
 };
 
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="https://tinyurl.com/2xhrkaao" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
@@ -34,9 +35,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative min-h-screen">
+            <AnimatedBackground />
             <Navbar />
             <main>{children}</main>
-            {/* <Footer /> */}
           </div>
           <Toaster />
         </ThemeProvider>

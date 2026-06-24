@@ -73,7 +73,7 @@ export function TutorialSection() {
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                     >
                     {youtubevideos.map((video, index) => (
-                        <motion.div className="relative pb-[56.25%] h-0 overflow-hidden rounded-t-lg mb-4">
+                        <motion.div key={video.id} className="relative pb-[56.25%] h-0 overflow-hidden rounded-t-lg mb-4">
                         <motion.iframe
                             className="absolute top-0 left-0 w-full h-full rounded-lg"
                             src={video.youtubeUrl}

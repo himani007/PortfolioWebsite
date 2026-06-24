@@ -125,7 +125,7 @@ export function AboutSection() {
                     transition={{ duration: 0.3 }}
                     className="text-muted-foreground"
                   >
-                    In a world ruled by AI, I bring to the table what AI can’t! What makes me human!  
+                    In a world ruled by AI, I bring to the table what AI can’t! What makes me human! I love creating digital content.
                   </motion.p>
                 )}
               </AnimatePresence>

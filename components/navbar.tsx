@@ -2,27 +2,30 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Menu, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
+// `id` must match the matching <section id="..."> on the page so the
+// scroll-spy can highlight the right link as you scroll.
 const navItems = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/#about" },
-  { name: "Blog", path: "/#blogs" },
-  { name: "Skills", path: "/#skills" },
-  { name: "Experience", path: "/#work-experience" },
-  { name: "Contact", path: "/#contact" },
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Blogs", id: "blogs" },
+  { name: "Videos", id: "tutorials" },
+  { name: "Experience", id: "work-experience" },
+  { name: "Skills", id: "skills" },
+  { name: "Content", id: "content-creation" },
+  { name: "Contact", id: "contact" },
 ]
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const pathname = usePathname()
+  const [activeSection, setActiveSection] = useState("home")
   const { theme, setTheme } = useTheme()
 
   useEffect(() => {
@@ -33,6 +36,31 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  // Scroll-spy: highlight whichever section is currently in the middle of
+  // the viewport. The rootMargin creates a thin "active band" near the
+  // vertical centre so only one section is active at a time.
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter((el): el is HTMLElement => el !== null)
+
+    if (sections.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [mounted])
 
   if (!mounted) {
     return null
@@ -52,26 +80,26 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link
-            href="/"
+            href="/#home"
             className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity"
           >
             hGulati
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <Link
-                key={item.path}
-                href={item.path}
+                key={item.id}
+                href={`/#${item.id}`}
                 className={cn(
                   "relative text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.path
+                  activeSection === item.id
                     ? "text-primary"
                     : "text-muted-foreground"
                 )}
               >
                 {item.name}
-                {pathname === item.path && (
+                {activeSection === item.id && (
                   <motion.div
                     layoutId="navbar-indicator"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
@@ -121,11 +149,11 @@ export function Navbar() {
         <div className="container mx-auto px-4 py-4">
           {navItems.map((item) => (
             <Link
-              key={item.path}
-              href={item.path}
+              key={item.id}
+              href={`/#${item.id}`}
               className={cn(
                 "block py-2 text-sm font-medium transition-colors hover:text-primary",
-                pathname === item.path
+                activeSection === item.id
                   ? "text-primary"
                   : "text-muted-foreground"
               )}
