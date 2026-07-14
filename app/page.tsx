@@ -12,6 +12,7 @@ import { WorkExSection } from "@/components/sections/workex"
 import { ProjectSection } from "@/components/sections/project"
 import { ContentCreationSection } from "@/components/sections/content-creation"
 import { OtherInterestsSection } from "@/components/sections/other-interests"
+import { ResearchSection } from "@/components/sections/research"
 
 
 
@@ -26,6 +27,7 @@ export default function Home() {
       <WorkExSection/>
       <SkillSection />
       <ProjectSection/>
+      <ResearchSection/>
       <CertificateSection/>
       <EducationSection/>
       <ContentCreationSection/>

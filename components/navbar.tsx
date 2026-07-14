@@ -17,6 +17,7 @@ const navItems = [
   { name: "Videos", id: "tutorials" },
   { name: "Experience", id: "work-experience" },
   { name: "Skills", id: "skills" },
+  { name: "Research", id: "research" },
   { name: "Content", id: "content-creation" },
   { name: "Contact", id: "contact" },
 ]
@@ -86,7 +87,7 @@ export function Navbar() {
             hGulati
           </Link>
 
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-5">
             {navItems.map((item) => (
               <Link
                 key={item.id}

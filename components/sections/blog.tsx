@@ -33,7 +33,7 @@ const blogs: Blog[] = [
     id: 2,
     title: "LLMs vs AI Agents",
     description: "What actually separates a large language model from an AI agent, explained simply.",
-    image: "/blog2_image.png",
+    image: "https://cdn-images-1.medium.com/max/700/1*4Y1frGZ7EQX7qG9DjpnTqw.png",
     color: "from-blue-500 to-purple-600",
     textColor: "text-blue-100",
     mediumUrl: "https://himani-gulati.medium.com/llms-vs-ai-agents-043c7958e99e"
@@ -42,7 +42,7 @@ const blogs: Blog[] = [
     id: 3,
     title: "Let's Start Using HuggingFace 🤗",
     description: "A beginner-friendly walkthrough to start building with the HuggingFace ecosystem.",
-    image: "/blog1b_image.png",
+    image: "https://cdn-images-1.medium.com/max/700/1*aZWqHtE-bylRsp6KGTVJ2w.png",
     color: "from-green-500 to-yellow-500",
     textColor: "text-green-100",
     mediumUrl: "https://himani-gulati.medium.com/lets-start-using-huggingface-b5ee5eae2b5d"
@@ -51,7 +51,7 @@ const blogs: Blog[] = [
     id: 4,
     title: "Hyper-parameter Tuning in Decision Trees and Random Forests",
     description: "A comprehensive guide to hyper-parameter tuning in Decision Trees and Random Forests.",
-    image: "/blog3_image.png",
+    image: "https://cdn-images-1.medium.com/max/700/0*mPPJrhuRtuovklbk",
     color: "from-red-500 to-pink-600",
     textColor: "text-red-100",
     mediumUrl: "https://himani-gulati.medium.com/hyper-parameter-tuning-in-decision-trees-and-random-forests-3bdee09ea5af"
@@ -60,7 +60,7 @@ const blogs: Blog[] = [
     id: 5,
     title: "Understanding the Gaussian Filter",
     description: "Breaking down the BLURRRRR! A comprehensive guide to the Gaussian filter, and how it works.",
-    image: "/blog1.png",
+    image: "https://cdn-images-1.medium.com/max/700/1*yw8yzlLU_twCUfAKc-GEZw.png",
     color: "from-amber-500 to-orange-600",
     textColor: "text-amber-100",
     mediumUrl: "https://himani-gulati.medium.com/understanding-the-gaussian-filter-c2cb4fb4f16b"
@@ -69,7 +69,7 @@ const blogs: Blog[] = [
     id: 6,
     title: "Introduction to Diffusion Models",
     description: "A theoretical understanding of Diffusion models for beginners.",
-    image: "/blog2_image.png",
+    image: "https://cdn-images-1.medium.com/max/700/1*ooyn3AkR7pm5JKlFZxpbdg.png",
     color: "from-cyan-500 to-blue-600",
     textColor: "text-cyan-100",
     mediumUrl: "https://himani-gulati.medium.com/introduction-to-diffusion-models-b9c8f2f534fa"
@@ -78,7 +78,7 @@ const blogs: Blog[] = [
     id: 7,
     title: "Numpy's Random Module",
     description: "A practical tour of NumPy's random module and how to generate the data you need.",
-    image: "/blog3_image.png",
+    image: "https://cdn-images-1.medium.com/max/700/1*_oGev3NXV98tV6xGS8LHkw.png",
     color: "from-violet-500 to-indigo-600",
     textColor: "text-violet-100",
     mediumUrl: "https://himani-gulati.medium.com/numpys-random-module-8d3fde9bc582"
@@ -87,7 +87,7 @@ const blogs: Blog[] = [
     id: 8,
     title: "Understanding Box Plots",
     description: "What box plots really show you about your data: quartiles, outliers and all.",
-    image: "/analysis.png",
+    image: "https://cdn-images-1.medium.com/max/700/0*WmRntgtzN5DEfzyA.png",
     color: "from-teal-500 to-emerald-600",
     textColor: "text-teal-100",
     mediumUrl: "https://himani-gulati.medium.com/understanding-box-plots-d161a3d3f7ec"
@@ -96,7 +96,7 @@ const blogs: Blog[] = [
     id: 9,
     title: "Scraping Data Using Beautiful Soup and Python",
     description: "Collect data from the web step by step using Beautiful Soup and Python.",
-    image: "/blog1b_image.png",
+    image: "https://cdn-images-1.medium.com/max/700/0*uTUKeCqG7sceQEdC",
     color: "from-rose-500 to-red-600",
     textColor: "text-rose-100",
     mediumUrl: "https://himani-gulati.medium.com/scraping-data-using-beautiful-soup-and-python-4170e7ec63fd"
@@ -158,7 +158,7 @@ export function BlogSection() {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+              className="text-5xl font-bold mb-6 text-primary"
             >
               Blogs
             </motion.h2>

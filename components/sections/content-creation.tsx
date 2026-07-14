@@ -83,7 +83,7 @@ export function ContentCreationSection() {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+              className="text-5xl font-bold mb-6 text-primary"
             >
               Content Creation
             </motion.h2>

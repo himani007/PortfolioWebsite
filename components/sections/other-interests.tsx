@@ -1,28 +1,18 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FaFilePdf, FaDownload, FaArrowRight } from "react-icons/fa"
 
 /**
- * HOW TO ADD YOUR FILES
- * ---------------------
- * Drop your files into the `public/` folder (~/Desktop/folio-motion/public/):
- *   - Research paper PDF  ->  save it as  public/research-paper.pdf
- *   - Images             ->  save them as public/interest-1.jpg, interest-2.jpg, interest-3.jpg
- * Then just edit the titles / captions below. (File names are case-sensitive.)
+ * HOW TO ADD YOUR IMAGES
+ * ----------------------
+ * Save your images into the public/ folder (~/Desktop/folio-motion/public/) as:
+ *   public/interest-1.jpg, public/interest-2.jpg, public/interest-3.jpg
+ * Then edit the captions below. (File names are case-sensitive.)
  */
 
-const researchPaper = {
-  title: "My Research Paper",
-  description:
-    "A research paper I worked on. Click through to read the full PDF.",
-  pdf: "/research-paper.pdf",
-}
-
 const galleryImages = [
-  { src: "/interest-1.jpg", caption: "Add a caption" },
-  { src: "/interest-2.jpg", caption: "Add a caption" },
-  { src: "/interest-3.jpg", caption: "Add a caption" },
+  { src: "/interest-1.jpg", caption: "" },
+  { src: "/interest-2.jpg", caption: "" },
 ]
 
 export function OtherInterestsSection() {
@@ -45,7 +35,7 @@ export function OtherInterestsSection() {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+              className="text-5xl font-bold mb-6 text-primary"
             >
               Other Interests
             </motion.h2>
@@ -61,38 +51,8 @@ export function OtherInterestsSection() {
             </motion.p>
           </div>
 
-          {/* Research paper card */}
-          <motion.a
-            href={researchPaper.pdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ y: 40, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.02 }}
-            className="group mb-12 flex flex-col sm:flex-row items-start sm:items-center gap-5 max-w-3xl mx-auto rounded-2xl border border-border bg-card/60 p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
-          >
-            <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white">
-              <FaFilePdf className="h-7 w-7" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold text-foreground">
-                {researchPaper.title}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {researchPaper.description}
-              </p>
-            </div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background">
-              <FaDownload className="h-4 w-4" />
-              Read paper
-              <FaArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-            </span>
-          </motion.a>
-
           {/* Image gallery */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {galleryImages.map((img, index) => (
               <motion.div
                 key={img.src}

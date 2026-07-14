@@ -40,7 +40,7 @@ export function HeroSection() {
           >
             <TypeAnimation
               sequence={[
-                "Data Science Student",
+                "Data Scientist",
                 1000,
                 "I Craft Engaging and Informative Content",
                 1000,

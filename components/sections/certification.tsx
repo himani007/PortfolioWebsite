@@ -71,7 +71,7 @@ export function CertificateSection() {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+              className="text-5xl font-bold mb-6 text-primary"
             >
               Certificates
             </motion.h2>
