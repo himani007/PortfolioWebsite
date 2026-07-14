@@ -18,6 +18,7 @@ const navItems = [
   { name: "Experience", id: "work-experience" },
   { name: "Skills", id: "skills" },
   { name: "Research", id: "research" },
+  { name: "Education", id: "education" },
   { name: "Content", id: "content-creation" },
   { name: "Contact", id: "contact" },
 ]
@@ -87,7 +88,7 @@ export function Navbar() {
             hGulati
           </Link>
 
-          <div className="hidden md:flex items-center space-x-5">
+          <div className="hidden lg:flex items-center space-x-4">
             {navItems.map((item) => (
               <Link
                 key={item.id}
@@ -126,7 +127,7 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="lg:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <Menu className="h-5 w-5" />
@@ -143,7 +144,7 @@ export function Navbar() {
           y: isMobileMenuOpen ? 0 : -20,
         }}
         className={cn(
-          "absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md shadow-lg md:hidden",
+          "absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md shadow-lg lg:hidden",
           !isMobileMenuOpen && "hidden"
         )}
       >

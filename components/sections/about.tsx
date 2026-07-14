@@ -61,7 +61,7 @@ export function AboutSection() {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="relative aspect-square rounded-2xl overflow-hidden"
+              className="relative aspect-[3/4] rounded-2xl overflow-hidden"
             >
               <Image
                 src="/main.jpg"

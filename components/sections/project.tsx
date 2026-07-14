@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { FaChevronDown, FaBriefcase } from "react-icons/fa"
+import { FaChevronDown, FaBriefcase, FaGithub } from "react-icons/fa"
 
 type WorkExperience = {
   id: number
@@ -10,10 +10,34 @@ type WorkExperience = {
   company: string
   duration: string
   details: string[]
+  link?: string
 }
 
 const workExperienceData: WorkExperience[] = [
-    {
+  {
+    id: 6,
+    role: "MRedditSum: Multi-Stage Reddit Thread Summarization",
+    company: "NLP, Transformers, T5, BART, LongT5, Multimodal Summarization",
+    duration: "",
+    link: "https://github.com/himani007/mredditsum-reproduction",
+    details: [
+      "Reproduced the MRedditSum paper's Cluster-based Multi-Stage (CMS) summarization pipeline on Reddit threads as my NLP final project.",
+      "Tested whether image-caption information improves text summarization, running T5-base, BART-base, and LongT5 each with and without image captions.",
+      "Found that the CMS pipeline improves summaries substantially, while image captions add a smaller gain."
+    ]
+  },
+  {
+    id: 7,
+    role: "Signaling the Dog: How Profile Content Accelerates Technology-Mediated Dog Rehoming",
+    company: "Research, NLP, Qualitative Analysis (MaxQDA), Python, Animal-Computer Interaction",
+    duration: "",
+    details: [
+      "Studied how the content of online adoption profiles shapes and accelerates technology-mediated dog rehoming.",
+      "Analyzed large datasets of adoption records with NLP and qualitative coding (MaxQDA) to find which profile signals drive faster adoption.",
+      "Produced an ACM-format research paper on the findings (also featured in the Research section)."
+    ]
+  },
+  {
     id: 1,
     role: "RAG - based Conversational AI Chatbot",
     company: "Python, LangChain, Vector Database",
@@ -126,6 +150,18 @@ export function ProjectSection() {
                         <li key={idx}>{point}</li>
                       ))}
                     </ul>
+                    {exp.link && (
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-blue-600 hover:underline"
+                      >
+                        <FaGithub className="h-4 w-4" />
+                        View on GitHub
+                      </a>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>

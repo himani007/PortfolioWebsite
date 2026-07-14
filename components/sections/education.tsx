@@ -17,7 +17,7 @@ const educationData: Education[] = [
     id: 1,
     degree: "MS in Data Science",
     school: "Indiana University Bloomington",
-    duration: "Aug 2023 – May 2025",
+    duration: "Aug 2024 – May 2026",
     details: [
       "Relevant Courses: Computer Vision, Applied Machine Learning, Statistics for Data Science, Cloud Computing, Applied DataBase Technologies",
       "Currently Working on research projects based on Animal-Computer Interaction",

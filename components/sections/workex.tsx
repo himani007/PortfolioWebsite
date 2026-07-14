@@ -13,16 +13,27 @@ type WorkExperience = {
 }
 
 const workExperienceData: WorkExperience[] = [
-    {
+  {
+    id: 6,
+    role: "Research Assistant",
+    company: "School of Education, Indiana University",
+    duration: "April 2025 - Present",
+    details: [
+      "Benchmarking small language models (SLMs) augmented with retrieval-augmented generation (RAG) for Socratic-style K-12 math tutoring",
+      "Building a reproducible evaluation benchmark and a working tutor prototype for school LMS integration",
+      "Focusing on on-device, low-resource-friendly models to widen access to quality tutoring"
+    ]
+  },
+  {
     id: 1,
     role: "Research Assistant",
     company: "Indiana University Bloomington",
-    duration: "Aug 2025 - Present",
+    duration: "Aug 2025 – April 2026",
     details: [
-      "Conducting research in Animal-Computer Interaction with Deep Learning, MaxQDA, and Python",
-      "Analyzing and preparing large datasets of animal adoption records using data analysis techniques",
-      "Collaborating with faculty and peers to publish research findings in academic journals and conferences",
-      "Assisting in the development of machine learning models to predict animal behavior and adoption likelihood using NLP techniques"
+      "Conducted research in Animal-Computer Interaction with Deep Learning, MaxQDA, and Python",
+      "Analyzed and prepared large datasets of animal adoption records using data analysis techniques",
+      "Collaborated with faculty and peers to publish research findings in academic journals and conferences",
+      "Built machine learning models to predict animal behavior and adoption likelihood using NLP techniques"
     ]
   },
   {
